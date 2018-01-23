@@ -1,5 +1,6 @@
 #fully functional secret santa script by AladeenIII
 from random import shuffle
+import os
 print(" welcome to the secret santa programm... \n use only lower case \n to start, type a name and press <enter> \n")
 names = []
 names.append(input())
@@ -30,7 +31,7 @@ for i in range(0,len(names)):
     print("your target is " + santa + '\n')
     print(person + " press <enter> before passing it on")
     next_line = input("")
-    print('\n'*100) #a better way is to clear console, but dont know how yet
+    os.system('cls' if os.name=='nt' else 'clear')
 print('gg wp')
 
 
