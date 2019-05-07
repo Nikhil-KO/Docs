@@ -1,24 +1,25 @@
-#fully functional secret santa script by AladeenIII
+#Secret santa script by Nikhil-KO
 from random import shuffle
 import os
+
 print(" welcome to the secret santa programm... \n use only lower case \n to start, type a name and press <enter> \n")
 names = []
 names.append(input())
-x = True
-while x == True:
-    y = input("\nAdd another user and press <enter> or type 'end' and press <enter> to stop \n\n")
-    if y == "end" or y == "'end'":
+loop = True
+while loop == True:
+    nextName = input("\nAdd another user and press <enter> or type 'end' and press <enter> to stop \n\n")
+    if nextName == "end" or nextName == "'end'":
         print('\n' + str(names))
         print('\nOk the names above ^ are ready and will be shuffled! \nPlease come to the computer in order of names input to find out who your target is\n')
-        x = False
+        loop = False
     elif y == '':
         print()
     else:
         names.append(y)
-        
+# now to shuffle
 santa_list = names.copy()
 shuffle(santa_list)
-for i in range(0,len(names)):
+for i in range(0, len(names)):
     person = names[i]
     santa = 'fail'
     for i in range(0,len(santa_list)):
